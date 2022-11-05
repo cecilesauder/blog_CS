@@ -67,8 +67,3 @@ paginate = 10
   linkedin = "cecilesauder"
   instagram = "bubububulle"
   github = "cecilesauder"
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
