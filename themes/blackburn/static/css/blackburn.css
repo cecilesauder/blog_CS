@@ -1,5 +1,12 @@
 .header {
-  font-family: "Raleway", Helvetica, Arial, sans-serif
+  background-image: url("/img/banner.gif");
+  height:150px;
+}
+
+.myheader{
+  text-align:center;
+  font-size:300%;
+  color:#660066;
 }
 
 a {
@@ -47,12 +54,18 @@ article > footer {
   overflow: hidden;
 }
 
-#menu {
-  overflow-y: auto;
+body{
+  font-family: Raleway;
+  font-size: 150%;
 }
 
-#menu a {
-  padding: 0.6em;
+h1{
+  font-weight:bold;
+  font-size: 250%;
+}
+
+h2{
+  font-weight:bold;
 }
 
 #menu .brand {
@@ -70,10 +83,6 @@ article > footer {
   font-size: 0.9em;
 }
 
-#menu .pure-menu ul.pure-menu-children {
-  border-top: none;
-}
-
 i {
   display: inline-block;
   margin-right: 0.2em;
@@ -86,4 +95,8 @@ i {
 
 .pagination a {
   color: #265778;
+}
+
+.content{
+  max-width:70%;
 }
