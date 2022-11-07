@@ -8,13 +8,13 @@ sidemenu: 'true'
 ## Mise à jour 2022 
 
 
-Come back to my native langage ! 🇫🇷
+Come back to my native langage ! `r emoji::emoji("france")`
 
 Au passage quelqu'un sait pourquoi :smile: m'affiche pas le smiley même dans 
-le `.md` direct ? 😏
+le `.md` direct ? `r emoji::emoji("smirk")`
 
 Du coup je suis obligée d'utiliser :  ` emoji::emoji("france")` Et c'est long ! 
-😅
+`r emoji::emoji("sweat_smile")`
 
 Hé oui, parce que je suis française et 
 beaucoup plus à l'aise pour m'exprimer dans cette langue pour un blog personnel.
@@ -25,17 +25,17 @@ j'apporterais rien de plus.
 J'ai aussi un gros trauma qui pique par rapport à l'anglais...
 
 Donc je vire carrément l'ancienne version de cette section anglaise, 
-aaaaah ça fait du bien. 😅 
+aaaaah ça fait du bien. `r emoji::emoji("sweat_smile")` 
 
-Et 😅  c'est mon emoji préféré alors habitue toi. 
+Et `r emoji::emoji("sweat_smile")`  c'est mon emoji préféré alors habitue toi. 
 Ah oui c'est pas parce que 
 j'ai switché en français que je vais pas utiliser des anglissismes ou te tutoyer, 
 mon français blogué est un français oral, cherche pas les négations 
-(NE cherche pas, voilà, très bon exemple, habitue toi aussi 😅 ).
+(NE cherche pas, voilà, très bon exemple, habitue toi aussi `r emoji::emoji("sweat_smile")` ).
 
 
 En faisant ce blog je me sens vraiment comme un serial knitter, 
-je knitte à répétition, un ajout, un knit 😅 
+je knitte à répétition, un ajout, un knit `r emoji::emoji("sweat_smile")` 
 
 '#blaguedemerde '#grossemalignelehashtagcestuntitreenmarkdown
 
@@ -95,42 +95,21 @@ Je vais passer en visible le chunk suivant qui refuse de m'afficher l'image,
 alors que ça fonctionnait avec l'ancien blogdown d'y a 4 ans...
 
 
-
-```r
+```{r, echo=TRUE, fig.cap="Avec d'autres R-ladies à SatRdays Amsterdam 2018 (Je suis celle avec les cheveux rose et un bébé pendu au sein )", out.width = '100%'}
 knitr::include_graphics("img/aboutme1.jpg")
 ```
-
-<div class="figure">
-<img src="img/aboutme1.jpg" alt="Avec d'autres R-ladies à SatRdays Amsterdam 2018 (Je suis celle avec les cheveux rose et un bébé pendu au sein )" width="100%" />
-<p class="caption">Figure 1: Avec d'autres R-ladies à SatRdays Amsterdam 2018 (Je suis celle avec les cheveux rose et un bébé pendu au sein )</p>
-</div>
 
 
 et en profiter pour la redimensionner avec imagemagick pour l'insérer direct 
 dans le markdown (qui envoie les images taille d'origine), comme pour je ne sais quelle raison, ça marchait avec l'ancien blogdown
 mais que visiblement ça marche plus maintenant.
 
-
-```r
+```{r}
 library(magick)
-```
 
-```
-## Linking to ImageMagick 6.9.11.60
-## Enabled features: fontconfig, freetype, fftw, heic, lcms, pango, webp, x11
-## Disabled features: cairo, ghostscript, raw, rsvg
-```
-
-```
-## Using 12 threads
-```
-
-```r
 image_read("img/aboutme1.jpg") %>%
   image_scale("1200x")
 ```
-
-<img src="/about_files/figure-html/unnamed-chunk-2-1.png" width="600" />
 
 Avec d'autres R-ladies à SatRdays Amsterdam 2018 (Je suis celle avec les cheveux rose et un bébé pendu au sein). 
 
