@@ -5,7 +5,7 @@
 
 .myheader{
   text-align:center;
-  font-size:300%;
+  font-size:200%;
   color:#660066;
 }
 
@@ -56,17 +56,26 @@ article > footer {
 
 body{
   font-family: Raleway;
-  font-size: 150%;
+  font-size: 100%;
 }
 
 h1{
   font-weight:bold;
-  font-size: 250%;
+  font-size: 300%;
 }
 
 h2{
   font-weight:bold;
 }
+
+#menu {
+  overflow-y: auto;
+}
+
+#menu a {
+  padding: 0.6em;
+}
+
 
 #menu .brand {
   font-family: Raleway;
@@ -83,6 +92,8 @@ h2{
   font-size: 0.9em;
 }
 
+
+
 i {
   display: inline-block;
   margin-right: 0.2em;
@@ -98,5 +109,5 @@ i {
 }
 
 .content{
-  max-width:70%;
+  max-width:50%;
 }
