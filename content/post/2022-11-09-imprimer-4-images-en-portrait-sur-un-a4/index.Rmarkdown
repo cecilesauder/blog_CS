@@ -1,0 +1,73 @@
+---
+title: Imprimer 4 images en portrait sur un A4
+author: Cécile Sauder
+date: '2022-11-09'
+slug: []
+categories: []
+tags: []
+description: ''
+topics: []
+---
+
+# Ou Dès fois Ubuntu, c''est un peu relou... Mais heureusement il y a R
+
+L'idée, c'est de mettre 4 images en portrait sur une feuille A4 parce que personne
+a décidé de coder ça dans le truc d'impression d'Ubuntu `r emoji::emoji("confused")`.
+
+Allez au boulot, on sort les `r emoji::emoji("package")` et c'est parti !
+
+```{r, message=FALSE}
+library(tidyverse)
+library(magick)
+
+img <- image_read("1.png")
+
+img %>%
+  image_append()
+
+
+li <- c(img,img) %>%
+  image_append()
+
+A4 <- c(li, li) %>%
+  image_append(stack = TRUE) %>%
+  image_scale("x3508")
+
+print(A4)
+
+
+```
+Pis balançons direct le pdt quitte à faire, par contre à mon avis c'est très sale ce que j'ai fait.
+
+Enfin c'est sûr faudrait le coder pour 4,6,8,... Fin comme le truc bien quoi.
+
+```{r}
+A4 %>%
+  image_write(path = "2x2_flyers_recto.png", format = "png")
+```
+
+Bon ben la même pour le verso : 
+
+```{r}
+img <- image_read("2.png")
+
+img %>%
+  image_append()
+
+
+li <- c(img,img) %>%
+  image_append()
+
+A4 <- c(li, li) %>%
+  image_append(stack = TRUE) %>%
+  image_scale("x3508")
+
+print(A4)
+
+A4 %>%
+  image_write(path = "2x2_flyers_verso.png", format = "png")
+```
+
+C'était du rapide `r emoji::emoji("sweat_smile")`
+
+
