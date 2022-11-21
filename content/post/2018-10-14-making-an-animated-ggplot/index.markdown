@@ -11,7 +11,7 @@ tags:
   - magick
   - tidyverse
 slug: making-an-animated-ggplot
-header: "post/2018-10-14-making-an-animated-ggplot_files/figure-html/unnamed-chunk-4-1.gif"
+header: "/img/unnamed-chunk-11-1.gif"
 ---
 
 
@@ -152,14 +152,16 @@ d2 <- tibble(
   x3 = x3+2,
   y3 = y3,
   hex = c(
-    "https://github.com/rstudio/hex-stickers/raw/master/PNG/blogdown.png",
-    "https://github.com/rstudio/hex-stickers/raw/master/PNG/devtools.png",
-    "https://github.com/rstudio/hex-stickers/raw/master/PNG/tibble.png",
-    "https://github.com/rstudio/hex-stickers/raw/master/PNG/pipe.png",
+    #"https://github.com/rstudio/hex-stickers/blob/main/PNG/blogdown.png",
+    "https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/blogdown.png",
+    #"https://github.com/rstudio/hex-stickers/raw/master/PNG/blogdown.png",
+    "https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/devtools.png",
+    "https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/tibble.png",
+    "https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/pipe.png",
     #"https://github.com/thomasp85/gganimate/raw/master/man/figures/logo.png",
     "https://github.com/thomasp85/gganimate/raw/main/man/figures/logo.png",
-    "https://github.com/rstudio/hex-stickers/raw/master/PNG/tidyverse.png",
-    "https://github.com/rstudio/hex-stickers/raw/master/PNG/ggplot2.png"
+    "https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/tidyverse.png",
+    "https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/ggplot2.png"
   )
 )
 ```
