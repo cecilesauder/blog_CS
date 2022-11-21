@@ -13,7 +13,7 @@ tags:
   - magick
   - tidyverse
 slug: amstrdays-s-tweets
-header: "post/2018-11-18-amstrday-s-tweets_files/figure-html/unnamed-chunk-9-1.png"
+header: "/img/unnamed-chunk-9-1.png"
 ---
 
 <script src="{{< blogdown/postref >}}index_files/kePrint/kePrint.js"></script>
@@ -51069,182 +51069,182 @@ text2vec
 <tr>
 <td style="text-align:left;">
 
--   </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    ☀️
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    😱
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    awesome
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    bang
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    contribute
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    excited
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    expressions
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    kick
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    learn
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    nice
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    regex
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    satrdaysorg
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    scoped
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    sharing
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    shine
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    started
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    starting
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    tidyeval
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    tomorrow
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    venue
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    <tr>
-    <td style="text-align:left;">
-    workshop
-    </td>
-    <td style="text-align:right;">
-    4
-    </td>
-    </tr>
-    </tbody>
-    </table>
-    </div>
+- </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  ☀️
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  😱
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  awesome
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  bang
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  contribute
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  excited
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  expressions
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  kick
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  learn
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  nice
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  regex
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  satrdaysorg
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  scoped
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  sharing
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  shine
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  started
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  starting
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  tidyeval
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  tomorrow
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  venue
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  <tr>
+  <td style="text-align:left;">
+  workshop
+  </td>
+  <td style="text-align:right;">
+  4
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
 
 ``` r
 #wordcloud

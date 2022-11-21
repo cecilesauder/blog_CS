@@ -10,7 +10,7 @@ tags:
   - magick
   - tidyverse
 slug: playing-with-dplyr5000-part-1
-header: "/content/post/2018-10-21-playing-with-dplyr5000-part-1/index_files/figure-html/unnamed-chunk-5-1.png"
+header: "/img/unnamed-chunk-5-1.png"
 ---
 
 **dplyr5000** is a data package with the 5000 first travis builds of **dplyr**. 

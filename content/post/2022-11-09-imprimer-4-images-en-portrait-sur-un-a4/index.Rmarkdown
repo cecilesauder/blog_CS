@@ -7,7 +7,7 @@ categories: []
 tags: []
 description: ''
 topics: []
-header: "/1.png"
+header: "/img/1.png"
 ---
 
 ## Ou Dès fois Ubuntu, c''est un peu relou... Mais heureusement il y a R
