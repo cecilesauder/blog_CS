@@ -1,27 +1,38 @@
 <article>
-  <div style="float:left;width:30%;">
-    <img src={{.Params.header}}  width="100%" />
-  </div>
-  <div style="float:right;width:70%;">
 
-  <header>
+  <table>
+    <tr>
+      <td width="30%">
+        <div>
+          <img src={{.Params.header}}  width="100%" />
+        </div>
+      </td>
+      <td width="70%">
+          <div>
 
-    {{ partial "post_meta.html" . }}
+          <header>
 
-  </header>
+            {{ partial "post_meta.html" . }}
 
-  <h2 class="myheader"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+          </header>
 
-  <p>
+          <h2 class="myheader"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 
-  {{ .Summary }}
-  </p>
+          <p>
 
-  {{ if .Truncated }}
-  <footer>
-    <a href="{{ .RelPermalink }}">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  {{ end }}
+          {{ .Summary }}
+          </p>
 
-  </div>
+          {{ if .Truncated }}
+          <footer>
+            <a href="{{ .RelPermalink }}">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+          </footer>
+          {{ end }}
+
+          </div>
+      </td>
+    </tr>
+  </table>
+
+
 </article>
