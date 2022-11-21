@@ -2,14 +2,12 @@
 title: Scraping Umbrella Academy's scripts
 author: Cécile Sauder
 date: '2019-02-22'
-slug: []
-categories: []
-description: ''
-tags: [rvest]
+tags:
+  - rvest
 topics:
-- scraping
-- umbrella academy
-- series
+  - scraping
+  - umbrella academy
+  - series
 header: https://m.media-amazon.com/images/I/81pJBOc71wL._SS500_.jpg
 ---
 

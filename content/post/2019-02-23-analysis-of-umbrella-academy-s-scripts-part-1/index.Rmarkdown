@@ -2,9 +2,6 @@
 title: Analysis of Umbrella Academy's scripts - Part 1
 author: Cécile Sauder
 date: '2019-02-23'
-slug: []
-categories: []
-description: ''
 topics:
   - text mining
   - umbrella academy

@@ -3,7 +3,7 @@ title: AmstRday's tweets
 author: Cécile Sauder
 date: '2018-11-18'
 topics:
-  - Data Visualization
+  - DataViz
   - Twitter API
   - SatRdays
 tags:
@@ -12,7 +12,6 @@ tags:
   - ggplot2
   - magick
   - tidyverse
-slug: amstrdays-s-tweets
 header: "/img/unnamed-chunk-9-1.png"
 ---
 

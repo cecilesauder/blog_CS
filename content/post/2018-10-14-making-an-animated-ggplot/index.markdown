@@ -3,14 +3,13 @@ title: Making an animated ggplot
 author: Cécile Sauder
 date: '2018-10-17'
 topics:
-  - Data Visualization
+  - DataViz
 tags:
   - gganimate
   - ggimage
   - ggplot2
   - magick
   - tidyverse
-slug: making-an-animated-ggplot
 header: "/img/unnamed-chunk-11-1.gif"
 ---
 

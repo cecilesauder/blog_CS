@@ -3,13 +3,12 @@ title: Playing with dplyr5000 - Part 1
 author: Cécile Sauder
 date: '2018-10-21'
 topics:
-  - Data Visualization
+  - DataViz
   - Github API
 tags:
   - ggplot2
   - magick
   - tidyverse
-slug: playing-with-dplyr5000-part-1
 header: "/img/unnamed-chunk-5-1.png"
 ---
 

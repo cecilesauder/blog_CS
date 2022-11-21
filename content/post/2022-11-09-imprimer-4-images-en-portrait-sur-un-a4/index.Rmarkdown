@@ -2,11 +2,10 @@
 title: Imprimer 4 images en portrait sur un A4
 author: Cécile Sauder
 date: '2022-11-09'
-slug: []
-categories: []
-tags: []
-description: ''
-topics: []
+tags:
+  - magick
+topics:
+  - DataViz
 header: "/img/1.png"
 ---
 

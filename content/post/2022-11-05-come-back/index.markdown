@@ -1,12 +1,13 @@
 ---
-title: Come back...
+title: Come back... in French :P
 author: Cécile Sauder
 date: '2022-11-05'
-slug: []
-categories: []
-tags: [comeback]
-description: ''
-topics: [blogdown, comeback]
+tags:
+  - blogdown
+  - github
+topics:
+  - comeback
+  - bug
 header: "/img/back_dr-who-doctor-who.gif"
 ---
 
@@ -14,7 +15,7 @@ header: "/img/back_dr-who-doctor-who.gif"
 ## Mise à jour 
 
 Voilà, voilà, depuis le dernier post y a 4 ans il s'est passé beaucoup de choses,
-je mettrais le "About" à jour parcequ'il est vraiment à revoir :'D
+je mettrais le "About" à jour parcequ'il est vraiment à revoir 😅
 
 
 J'ai carrément tout repris à zero, crée un nouveau repo Github. 
