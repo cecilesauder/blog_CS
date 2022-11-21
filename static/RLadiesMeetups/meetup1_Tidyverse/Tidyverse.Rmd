@@ -30,7 +30,7 @@ layout: true
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 12/12/2018</span></div> 
 ---
-background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/tidyverse.svg?sanitize=true)
+background-image: url(https://raw.githubusercontent.com/tidyverse/tidyverse/main/man/figures/logo.png)
 background-size: 550px
 background-position: 50% 50%
 

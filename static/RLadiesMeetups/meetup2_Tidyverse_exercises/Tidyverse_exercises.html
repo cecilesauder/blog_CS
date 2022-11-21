@@ -17,22 +17,22 @@
 
 
 layout: true
-  
+
 &lt;div class="my-header"&gt;&lt;/div&gt;
 
-&lt;div class="my-footer"&gt;&lt;span&gt;Cécile SAUDER    
+&lt;div class="my-footer"&gt;&lt;span&gt;Cécile SAUDER
 &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
 &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
-12/02/2019&lt;/span&gt;&lt;/div&gt; 
+12/02/2019&lt;/span&gt;&lt;/div&gt;
 ---
-background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/tidyverse.svg?sanitize=true)
+background-image: url(https://raw.githubusercontent.com/tidyverse/tidyverse/main/man/figures/logo.png)
 background-size: 550px
 background-position: 50% 50%
 
 
 ---
 
-background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/tidyverse.svg?sanitize=true)
+background-image: url(https://raw.githubusercontent.com/tidyverse/tidyverse/main/man/figures/logo.png)
 background-size: 100px
 background-position: 90% 3%
 
@@ -63,10 +63,10 @@ library(tidyverse)
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 ```
-  
-  
-&lt;br&gt; 
-  
+
+
+&lt;br&gt;
+
 
 
 
@@ -75,11 +75,11 @@ library(tidyverse)
 
 # Data
 
-If you have your proper data you want to tidy, perfect, if not, I prepared you some exercises with the famous [**gapminder**](https://www.gapminder.org/videos/ted-us-state-department/) dataset.  
+If you have your proper data you want to tidy, perfect, if not, I prepared you some exercises with the famous [**gapminder**](https://www.gapminder.org/videos/ted-us-state-department/) dataset.
 I was inspired by [David Robinson's course](https://www.datacamp.com/courses/introduction-to-the-tidyverse) on DataCamp.
 
-1. Install and load the `tidyverse` 📦 if it is not already done  
-2. Install and load the `gapminder` 📦   
+1. Install and load the `tidyverse` 📦 if it is not already done
+2. Install and load the `gapminder` 📦
 3. Look at the gapminder dataset
 
 --
@@ -121,7 +121,7 @@ background-position: 90% 3%
 
 .pull-left[
 
-- old way : **verb(subject, complements)**  
+- old way : **verb(subject, complements)**
 
 
 ```r
@@ -153,7 +153,7 @@ gapminder %&gt;% head(3)
 1\. Filter the gapminder dataset for the year 2007
 --
 
- - Hint: Don't forget to use `==` for a condition  
+ - Hint: Don't forget to use `==` for a condition
 
 --
 
@@ -165,7 +165,7 @@ gapminder %&gt;%
 2\. Filter the gapminder dataset for China and the year 2002
 --
 
- - Hint: and = `&amp;`  
+ - Hint: and = `&amp;`
 
 --
 
@@ -233,7 +233,7 @@ and the other called `lifeExpMonths` with the life expectancy in months
 --
 
  - Hint2: you can create as many columns as you want in the same `mutate()`
- 
+
 --
 
 ```r
@@ -245,10 +245,10 @@ gapminder %&gt;%
 ---
 
 
-# Mutate 
+# Mutate
 
 
-2\. Create a new colum `popUnderMillion` with 2 groups, one with `TRUE` when population `pop`is inferior to one million, and `FALSE` when  population is 
+2\. Create a new colum `popUnderMillion` with 2 groups, one with `TRUE` when population `pop`is inferior to one million, and `FALSE` when  population is
 superior or equal to one million
 
 --
@@ -261,8 +261,8 @@ superior or equal to one million
 gapminder %&gt;%
   mutate(
     popUnderMillion = if_else(
-      pop &lt; 1000000, 
-      TRUE, 
+      pop &lt; 1000000,
+      TRUE,
       FALSE
     )
   )
@@ -271,7 +271,7 @@ gapminder %&gt;%
 ---
 
 
-# Mutate 
+# Mutate
 
 
 3\. Create a new column `lifeExpGroup` with three groups, `young` for `lifeExp`
@@ -401,9 +401,9 @@ gapminder %&gt;%
 
 # ggplot
 
-Now we have seen the basics of **Tidyverse**, let's continue with **ggplot2**. 
+Now we have seen the basics of **Tidyverse**, let's continue with **ggplot2**.
 
-Sometimes you know what plot you want, but sometimes you don't. 
+Sometimes you know what plot you want, but sometimes you don't.
 In that case we can take a look at the webpage [**R Graph Gallery**](https://www.r-graph-gallery.com/), or at [**ggplot2 extensions**](https://www.ggplot2-exts.org/gallery/), or, if, like me, you love interactive plots, the [**plotly**](https://plot.ly/r/) 📦 is very cool.
 
 
@@ -425,21 +425,21 @@ gapminder %&gt;%
 
 --
 
-2\. Customize your plot 
+2\. Customize your plot
   - Reorder the boxplots with `forcats::fct_reorder`
   - Color the boxplots with the `aes fill`
   - Change the label axis with `labs()`
   - `coord_flip` your plot
   - Remove the legend
 
-  
+
 --
 
 
 ```r
 p &lt;- gapminder %&gt;%
-  ggplot(aes(x = forcats::fct_reorder(continent, -lifeExp), 
-             y = lifeExp, 
+  ggplot(aes(x = forcats::fct_reorder(continent, -lifeExp),
+             y = lifeExp,
              fill = continent)) +
   geom_boxplot() +
   labs(x = "", y = "Life Expectancy") +
@@ -468,7 +468,7 @@ ggplotly(p)
 
 #ggplot geom_point
 
-1\. Try to reproduce this plot 
+1\. Try to reproduce this plot
 
 ![](Tidyverse_exercises_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
 
@@ -477,7 +477,7 @@ ggplotly(p)
 
 #ggplot
 
-Hints : 
+Hints :
 
 1\. Use the aes `size` and `color`
 
@@ -499,14 +499,14 @@ Hints :
 
 --
 
-6\. Use `facet_wrap` to plot the continents separatly 
+6\. Use `facet_wrap` to plot the continents separatly
 
 ---
 
 
 #ggplot
 
-Here is the complete code for the plot : 
+Here is the complete code for the plot :
 
 
 ```r
@@ -527,9 +527,9 @@ gapminder %&gt;%
 
 #gganimate your ggplot
 
-Now let's animate this ggplot by year. 
+Now let's animate this ggplot by year.
 
-It's the example of the [**gganimate**](https://github.com/thomasp85/gganimate/wiki/Gapminder) 📦 by [Thomas Lin Pedersen](https://twitter.com/thomasp85). 
+It's the example of the [**gganimate**](https://github.com/thomasp85/gganimate/wiki/Gapminder) 📦 by [Thomas Lin Pedersen](https://twitter.com/thomasp85).
 
 It's very easy to animate your previous plot with **gganimate**:
 
@@ -537,9 +537,9 @@ It's very easy to animate your previous plot with **gganimate**:
 
 2\. Copy the code of your previous plot
 
-3\. Change `title = 'Year: 2002'` to `title = 'Year: {frame_time}'` 
+3\. Change `title = 'Year: 2002'` to `title = 'Year: {frame_time}'`
 
-4\. Then add `+  transition_time(year)` 
+4\. Then add `+  transition_time(year)`
 
 ---
 
@@ -553,7 +553,7 @@ It's very easy to animate your previous plot with **gganimate**:
 
 # Thanks!
 
-- [**Cheat sheets**](https://www.rstudio.com/resources/cheatsheets/)  
+- [**Cheat sheets**](https://www.rstudio.com/resources/cheatsheets/)
 - [**R Graph Gallery**](https://www.r-graph-gallery.com/) by [Yan Holtz](https://twitter.com/R_Graph_Gallery)
 - [**ggplot2 extensions**](https://www.ggplot2-exts.org/gallery/) by [Daniel Emaasit](https://twitter.com/emaasit)
 

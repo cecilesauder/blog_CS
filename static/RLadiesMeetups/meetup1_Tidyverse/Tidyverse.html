@@ -18,15 +18,15 @@
 
 
 layout: true
-  
+
 &lt;div class="my-header"&gt;&lt;/div&gt;
 
-&lt;div class="my-footer"&gt;&lt;span&gt;Cécile SAUDER    
+&lt;div class="my-footer"&gt;&lt;span&gt;Cécile SAUDER
 &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
 &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
-12/12/2018&lt;/span&gt;&lt;/div&gt; 
+12/12/2018&lt;/span&gt;&lt;/div&gt;
 ---
-background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/tidyverse.svg?sanitize=true)
+background-image: url(https://raw.githubusercontent.com/tidyverse/tidyverse/main/man/figures/logo.png)
 background-size: 550px
 background-position: 50% 50%
 
@@ -77,10 +77,10 @@ library(tidyverse)
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 ```
-  
-  
-&lt;br&gt; 
-  
+
+
+&lt;br&gt;
+
 &lt;img src="img/tidyband.png" width="1147" /&gt;
 
 
@@ -104,7 +104,7 @@ background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/rea
 background-size: 100px
 background-position: 90% 3%
 
-# Import data 
+# Import data
 
 
 ```r
@@ -124,7 +124,7 @@ background-position: 90% 3%
 
 
 ```r
-data_movies &lt;- read_csv("data/tmdb_5000_movies.csv") 
+data_movies &lt;- read_csv("data/tmdb_5000_movies.csv")
 data_credits &lt;- read_csv("data/tmdb_5000_credits.csv")
 
 data_movies
@@ -133,14 +133,14 @@ data_movies
 ```
 *## # A tibble: 4,803 x 20
 ##    budget genres homepage     id keywords original_langua~ original_title
-##     &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt;         
-##  1 2.37e8 "[{\"~ http://~  19995 "[{\"id~ en               Avatar        
+##     &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt;
+##  1 2.37e8 "[{\"~ http://~  19995 "[{\"id~ en               Avatar
 ##  2 3.00e8 "[{\"~ http://~    285 "[{\"id~ en               Pirates of th~
-##  3 2.45e8 "[{\"~ http://~ 206647 "[{\"id~ en               Spectre       
+##  3 2.45e8 "[{\"~ http://~ 206647 "[{\"id~ en               Spectre
 ##  4 2.50e8 "[{\"~ http://~  49026 "[{\"id~ en               The Dark Knig~
-##  5 2.60e8 "[{\"~ http://~  49529 "[{\"id~ en               John Carter   
-##  6 2.58e8 "[{\"~ http://~    559 "[{\"id~ en               Spider-Man 3  
-##  7 2.60e8 "[{\"~ http://~  38757 "[{\"id~ en               Tangled       
+##  5 2.60e8 "[{\"~ http://~  49529 "[{\"id~ en               John Carter
+##  6 2.58e8 "[{\"~ http://~    559 "[{\"id~ en               Spider-Man 3
+##  7 2.60e8 "[{\"~ http://~  38757 "[{\"id~ en               Tangled
 ##  8 2.80e8 "[{\"~ http://~  99861 "[{\"id~ en               Avengers: Age~
 ##  9 2.50e8 "[{\"~ http://~    767 "[{\"id~ en               Harry Potter ~
 ## 10 2.50e8 "[{\"~ http://~ 209112 "[{\"id~ en               Batman v Supe~
@@ -163,7 +163,7 @@ background-position: 90% 3%
 
 .pull-left[
 
-- old way : **verb(subject, complements)**  
+- old way : **verb(subject, complements)**
 
 
 ```r
@@ -186,10 +186,10 @@ data_movies %&gt;% head(3)
 ```
 ## # A tibble: 3 x 20
 ##   budget genres homepage     id keywords original_langua~ original_title
-##    &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt;         
-## 1 2.37e8 "[{\"~ http://~  19995 "[{\"id~ en               Avatar        
+##    &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt;
+## 1 2.37e8 "[{\"~ http://~  19995 "[{\"id~ en               Avatar
 ## 2 3.00e8 "[{\"~ http://~    285 "[{\"id~ en               Pirates of th~
-## 3 2.45e8 "[{\"~ http://~ 206647 "[{\"id~ en               Spectre       
+## 3 2.45e8 "[{\"~ http://~ 206647 "[{\"id~ en               Spectre
 ## # ... with 13 more variables: overview &lt;chr&gt;, popularity &lt;dbl&gt;,
 ## #   production_companies &lt;chr&gt;, production_countries &lt;chr&gt;,
 ## #   release_date &lt;date&gt;, revenue &lt;dbl&gt;, runtime &lt;int&gt;,
@@ -216,14 +216,14 @@ both %&gt;%
 
 ```
 ## $data_movies
-##  [1] "budget"               "genres"               "homepage"            
-##  [4] "id"                   "keywords"             "original_language"   
-##  [7] "original_title"       "overview"             "popularity"          
-## [10] "production_companies" "production_countries" "release_date"        
-## [13] "revenue"              "runtime"              "spoken_languages"    
-## [16] "status"               "tagline"              "title"               
-## [19] "vote_average"         "vote_count"          
-## 
+##  [1] "budget"               "genres"               "homepage"
+##  [4] "id"                   "keywords"             "original_language"
+##  [7] "original_title"       "overview"             "popularity"
+## [10] "production_companies" "production_countries" "release_date"
+## [13] "revenue"              "runtime"              "spoken_languages"
+## [16] "status"               "tagline"              "title"
+## [19] "vote_average"         "vote_count"
+##
 ## $data_credits
 ## [1] "movie_id" "title"    "cast"     "crew"
 ```
@@ -246,14 +246,14 @@ both %&gt;%
 
 ```
 ## $data_movies
-##  [1] "budget"               "genres"               "homepage"            
-*##  [4] "id"                   "keywords"             "original_language"   
-##  [7] "original_title"       "overview"             "popularity"          
-## [10] "production_companies" "production_countries" "release_date"        
-## [13] "revenue"              "runtime"              "spoken_languages"    
-## [16] "status"               "tagline"              "title"               
-## [19] "vote_average"         "vote_count"          
-## 
+##  [1] "budget"               "genres"               "homepage"
+*##  [4] "id"                   "keywords"             "original_language"
+##  [7] "original_title"       "overview"             "popularity"
+## [10] "production_companies" "production_countries" "release_date"
+## [13] "revenue"              "runtime"              "spoken_languages"
+## [16] "status"               "tagline"              "title"
+## [19] "vote_average"         "vote_count"
+##
 ## $data_credits
 *## [1] "movie_id" "title"    "cast"     "crew"
 ```
@@ -290,7 +290,7 @@ background-position: 90% 3%
 
 ```r
 both &lt;- data_movies %&gt;%
-  rename(movie_id = id) %&gt;% 
+  rename(movie_id = id) %&gt;%
 * left_join(data_credits)
 ```
 
@@ -305,13 +305,13 @@ both %&gt;% names()
 ```
 
 ```
-##  [1] "budget"               "genres"               "homepage"            
-##  [4] "movie_id"             "keywords"             "original_language"   
-##  [7] "original_title"       "overview"             "popularity"          
-## [10] "production_companies" "production_countries" "release_date"        
-## [13] "revenue"              "runtime"              "spoken_languages"    
-## [16] "status"               "tagline"              "title"               
-## [19] "vote_average"         "vote_count"           "cast"                
+##  [1] "budget"               "genres"               "homepage"
+##  [4] "movie_id"             "keywords"             "original_language"
+##  [7] "original_title"       "overview"             "popularity"
+## [10] "production_companies" "production_countries" "release_date"
+## [13] "revenue"              "runtime"              "spoken_languages"
+## [16] "status"               "tagline"              "title"
+## [19] "vote_average"         "vote_count"           "cast"
 ## [22] "crew"
 ```
 
@@ -579,7 +579,7 @@ background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/dpl
 background-size: 100px
 background-position: 90% 3%
 
-# Select variables 
+# Select variables
 
 ```r
 data_movies &lt;- data_movies %&gt;%
@@ -669,7 +669,7 @@ background-size: 100px
 background-position: 90% 3%
 
 
-# Add a column 
+# Add a column
 
 
 
@@ -681,7 +681,7 @@ data_movies &lt;- data_movies %&gt;%
     str_detect(production_companies,"Marvel") ~ "Marvel",
     str_detect(production_companies,"DC") ~ "DC",
     TRUE ~ "Other"
-  )) 
+  ))
 ```
 
 
@@ -701,12 +701,12 @@ background-position: 90% 3%
 
 ```r
 data_movies &lt;- data_movies %&gt;%
-  mutate(Production = case_when(  
+  mutate(Production = case_when(
 *   str_detect(production_companies,"Disney") ~ "Disney",
 *   str_detect(production_companies,"Marvel") ~ "Marvel",
 *   str_detect(production_companies,"DC") ~ "DC",
     TRUE ~ "Other"
-  )) 
+  ))
 ```
 ---
 
@@ -723,10 +723,10 @@ background-position: 90% 3%
 
 ```r
 data_movies &lt;- data_movies %&gt;%
-  mutate(Production = case_when(  
-    str_detect(production_companies,"Disney") ~ "Disney", 
-    str_detect(production_companies,"Marvel") ~ "Marvel", 
-    str_detect(production_companies,"DC") ~ "DC",         
+  mutate(Production = case_when(
+    str_detect(production_companies,"Disney") ~ "Disney",
+    str_detect(production_companies,"Marvel") ~ "Marvel",
+    str_detect(production_companies,"DC") ~ "DC",
     TRUE ~ "Other"
   )) %&gt;%
 * select(-production_companies)
@@ -846,15 +846,15 @@ background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/ggp
 background-size: 100px
 background-position: 90% 3%
 
-# Visualize data 
+# Visualize data
 
 
 ```r
 data_movies2 %&gt;%
-  ggplot(aes(x = budget, y = vote_average, 
+  ggplot(aes(x = budget, y = vote_average,
              col = Production, label = title)) +
   geom_smooth() +
-  facet_wrap(~Production) 
+  facet_wrap(~Production)
 ```
 
 ![](Tidyverse_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
@@ -865,12 +865,12 @@ background-image: url(https://github.com/rstudio/hex-stickers/raw/master/SVG/ggp
 background-size: 100px
 background-position: 90% 3%
 
-# Visualize data 
+# Visualize data
 
 
 ```r
 data_movies2 %&gt;%
-  ggplot(aes(x = budget, y = vote_average, 
+  ggplot(aes(x = budget, y = vote_average,
              col = Production, label = title)) +
   geom_smooth() +
   facet_wrap(~Production) +
