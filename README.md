@@ -6,3 +6,6 @@
 Blog about datascience with R 
 
 Personnal website of Cécile Sauder
+
+
+[https://cecilesauder.netlify.app/](https://cecilesauder.netlify.app/)
