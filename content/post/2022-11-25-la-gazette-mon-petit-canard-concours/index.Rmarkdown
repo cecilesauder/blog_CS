@@ -1,0 +1,305 @@
+---
+title: 'La Gazette, mon petit canard : Concours'
+author: Cécile Sauder
+date: '2022-11-25'
+topics:
+  - DataViz
+  - Twitter
+  - Text Analysis
+tags:
+  - wordcloud2
+  - rtweet
+  - magick
+  - tidytext
+  - tidyverse
+header: "/img/31.png"
+---
+
+
+
+## Concours de la Gazette de Montpellier
+
+Le jeu-concours : racontez-nous, sur le thème “La Gazette, mon petit canard”, une histoire ou anecdote que vous inspire La Gazette : texte (court), poème, chanson, vidéo, rap, histoire drôle, tableau, sculpture...
+
+Laissez parler votre créativité. Les créations les plus originales, amusantes, pertinentes, émouvantes, acides, délirantes,... gagneront l’un des 35 lots. Surprenez-nous !
+
+-  Envoyez votre production (texte, vidéo, photo, etc.) par mail à jb.decroix@gazettedemontpellier.fr
+
+- Obligatoire : merci d’indiquer prénom, nom, âge, adresse postale, adresse mail et numéro de téléphone + une copie de votre pièce d’identité, afin que votre inscription soit validée par retour de mail.
+
+- Date limite des envois : le jeudi 24 novembre 2022.
+
+- Soirée de remise des prix : le mercredi 7 décembre 2022.
+
+[Tweet de la Gazette Live Montpellier :](https://twitter.com/GazetteLive34/status/1572831094889713664).
+
+
+
+```{r echo=FALSE}
+
+blogdown::shortcode_html("tweet", "1572831094889713664" )
+
+```
+
+
+
+## L'idée 
+
+Une ShinyApp avec seulement un slider et une image qui correspond à un 
+WordCloud en forme de Canard, fait avec les mots recueillis sur le compte
+twitter.
+
+J'ai longtemps hésité, une version calendrier avec les 12 mois d'une année 
+je trouvais ça sympa aussi. 
+
+
+## Récupérer les tweets et les nettoyer
+
+### Librairies
+
+```{r, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(rtweet)
+library(tidytext)
+library(proustr)
+library(stopwords)
+library(lubridate)
+library(wordcloud2)
+library(glue)
+library(magick)
+
+```
+
+
+### Obtenir les 3250 derniers tweets de la @GazelleLive34
+
+Je l'ai sauvé quand je l'ai fait car ensuite on n'a plus les mêmes tweets 
+on en a des plus récents forcément. 
+
+```{r, eval=FALSE}
+
+#tmls <- get_timeline("GazetteLive34",
+                     retryonratelimit = TRUE,
+                     n = 3250)
+
+#saveRDS(tmls, file = "timelines_3250_24_11_22.RDS")
+```
+
+### Gros nettoyage !
+
+Alors j'ai nettoyé au mieux mais ce que j'aime pas ça !
+
+En plus c'est jamais uniforme bien sûr, genre "l'avion" ou "l`avion" c'est
+pas pareil, non non non... Y a aussi des emojis mais bon on va faire avec.
+
+Donc on tokenize au format "tweet", puis on enlève les stopwords avec
+
+` proustr::proust_stopwords()` ainsi que 
+` stopwords::stopwords("fr, source = "stopwords-iso)`
+
+
+```{r}
+tmls <- readRDS("timelines_3250_24_11_22.RDS")
+
+
+mots <- tmls %>%
+  select(created_at, id, text) %>%
+  mutate(text=str_replace_all(text, "'", " ")) %>%
+  mutate(text=str_replace_all(text, "’", " ")) %>%
+  mutate(text=str_squish(text)) %>%
+  filter(str_detect(text, "La Gazette est en ligne", negate = TRUE)) %>%
+  filter(str_detect(text, "application mobile", negate = TRUE)) %>%
+  unnest_tokens(word, input = text, token = "tweets") %>%
+  filter(str_detect(word, "[:space:]", negate = TRUE)) %>%
+  filter(str_detect(word, "https", negate = TRUE)) %>%
+  filter(str_detect(word, "t.co", negate = TRUE)) %>%
+  filter(!word %in% proust_stopwords()) %>%
+  filter(!word %in% stopwords("fr", source = "stopwords-iso")) %>%
+  filter(str_detect(word, "\\D")) %>%
+  filter(!word =="ans") %>%
+  filter(!word =="an") %>%
+  filter(!word =="°") %>%
+  filter(!word =="°") %>%
+  filter(!word =="€") %>%
+  filter(!is.na(word)) %>%
+  filter(!word == " ") %>%
+  filter(!word == "tco") %>%
+  filter(!word == "👇") %>%
+  filter(!word == "👇🏻") %>%
+  filter(!word %in% c("montpellier", "#montpellier", "gazette", "hérault",
+                      "lundi", "mardi", "mercredi", "jeudi",
+                      "vendredi", "samedi", "dimanche", "deux", "trois",
+                      "st", "saint", "euros", "rt", "gt",
+                      "janvier", "février", "mars", "avril", "mai",
+                      "juin", "juillet", "aout", "août", "septembre",
+                      "octobre", "novembre", "décembre")) %>%
+  mutate(month = month(created_at),
+         year = year(created_at))
+
+
+
+slider_values <- c("05_2020",
+                   "06_2020",
+                   "07_2020",
+                   "08_2020",
+                   "09_2020",
+                   "10_2020",
+                   "11_2020",
+                   "12_2020",
+                   "01_2021",
+                   "02_2021",
+                   "03_2021",
+                   "04_2021",
+                   "05_2021",
+                   "06_2021",
+                   "07_2021",
+                   "08_2021",
+                   "09_2021",
+                   "10_2021",
+                   "11_2021",
+                   "12_2021",
+                   "01_2022",
+                   "02_2022",
+                   "03_2022",
+                   "04_2022",
+                   "05_2022",
+                   "06_2022",
+                   "07_2022",
+                   "08_2022",
+                   "09_2022",
+                   "10_2022",
+                   "11_2022")
+
+tib <- mots %>%
+  filter(year == "2022" & month == "11") %>%
+  count(word, sort = TRUE) %>%
+  mutate(freq= 100*n/ sum(n)) %>%
+  select(-n)
+
+
+```
+J'ai ajouté à la main les `slider_values`
+
+Dans ` tib` je filtre pour choisir le mois et l'année que je veux, et à chaque fois
+il faudra que j'affiche le WordCloud correspondant pour essayer de le sauvergarder
+en ` .png`
+
+
+## WordCloud ou WordDuck 
+
+Alors oui, je pourrais faire une fonction qui prend en arguments le mois et l'année,
+mais comme de toutes façons la fonction ` wordcloud2() ` avec `figPath`, faut l'acutaliser
+un paquet de fois dans un navigateur pour la faire fonctionner... Ben oui c'est
+un bug connu il semblerait.
+
+La forme ça ressemble à ça d'ailleurs : 
+
+```{r}
+
+image_read("duck_shape.png") %>%
+  image_scale("800x")
+```
+
+
+J'ai donc plus qu'à faire le wordcloud correspondant, l'afficher dans un navigateur
+qui veut bien, et l'enregistrer en `.png` via un clic droit `r emoji::emoji("sweat_smile")`
+et ça 31 fois, pfiou !
+
+```{r}
+
+wc2 <- wordcloud2(data = tib,
+                  fontFamily = "Chilanka",
+                  fontWeight = 'bold',
+                  backgroundColor = "#048b9a",
+                  figPath = "duck_shape.png",
+                  widgetsize = c(1200,1200),
+                  color = rep(
+                    c(
+                      rep("yellow", 6),
+                      rep("#F4E100", 4),
+                      rep("orange", 2),
+                      rep("red", 2),
+                      "black"
+                    )
+                    , nrow(tib)))
+
+wc2
+
+```
+
+
+
+Bon je me rends compte au passage que ça prend vraiment trop de temps 
+pour afficher le HTML donc je décide d'afficher en images non interactives dans 
+la shiny app.
+
+Tu peux tester, y a de grandes chances que tu ne vois qu'un fond bleu 
+canard si dessus, si t'actualises la page assez de fois, je crois qu'avec Firefox 
+y a un temps plus long ça marchait un peu mieux quand j'ai fait les 31, tu verras
+le canard formé avec les mots des titres du mois de novembre 2022...
+
+Et tu remarqueras au passage que la grosse marche contre les VSS du 19/11 passe
+bien inaperçue face aux motards et à la coupe du monde `r emoji::emoji("disgusted")`
+
+Enfin, on en était où ?
+
+
+J'enregistre donc mes 31 images ` X.png ` avec X de 1 à 31, c'est important 
+car on ne peut pas mettre les valeurs que l'on veut dans le slider.
+
+Ce sera facile de faire le lien entre slider et nom d'image. 
+
+
+### Customisation des images de WordCloud
+
+<iframe src="https://giphy.com/embed/F3H25CjboPkTm" width="480" height="479" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+C'est magic... Enfin je vais juste faire une boucle for qui va itérer de 1 à 31 quoi...
+
+
+Alors ça je le fais pas tourner hin, ça lit l'image du numéro de l'itération de la boucle.
+
+Puis le nom est changé car plus lisible avec "/" qu'avec "-", police, couleur, 
+petite bordure qui va bien, puis je sauve l'image du même nom qu'avant, elle sera appelé 
+direct avec le slider.
+
+
+
+
+```{r, eval=FALSE}
+for (i in 1:31) {
+
+  img <- image_read(glue('www/img/{i}.png'))
+
+  img %>%
+    image_border( "#e7f00d", "0x100") %>%
+    image_annotate(str_replace(slider_values[i], "_", "/"),
+                   font = "Chilanka",
+                   strokecolor = "#048b9a",
+                   color = "black",
+                   weight = 800,
+                   size = 80,
+                   location = "+450+15") %>%
+    image_crop("1200x1300") %>%
+    image_border( "black", "10x10") %>%
+    image_write(path = glue('www/img/{i}.png'))
+
+}
+```
+
+
+Je voulais les combiner aussi pour en faire un calendrier. 
+
+Ça doit se faire qqs lignes avec `magick` mais là, la flemme `r emoji::emoji("sweat_smile")`
+
+Donc on est déjà le 26 et je me disais que la partie `Shiny` mérite bien un post
+à elle seule et que donc je vais en finir pour aujourdhui. Je rajouterais 
+sûrement des miniatures des images créées par la boucle demain et un post sur la 
+partie Shiny et comment changer le bouton du slider en CSS...
+
+Allez je retourne matter le Quotidien en replay ! Mais comme je suis trop 
+sympa je te laisse avec des citations de Kaamelott donc si tu veux rester planté.e
+là comme un radis y a aucun soucis... 
+
+<iframe src="https://kgif.fr/g/bdb05b897b" width="100%" height="479" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
