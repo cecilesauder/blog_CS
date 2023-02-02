@@ -121,18 +121,18 @@ dplyr::sample_n(lexique382,10)
 
 ```
 ## # A tibble: 10 × 3
-##    word        lemma        type 
-##    <chr>       <chr>        <chr>
-##  1 démariée    démarier     ver  
-##  2 desséchez   dessécher    ver  
-##  3 idéal       idéal        adj  
-##  4 story_board story_board  nom  
-##  5 gâteuses    gâteux       adj  
-##  6 dilution    dilution     nom  
-##  7 léchèrent   lécher       ver  
-##  8 reconfigure reconfigurer ver  
-##  9 cuveau      cuveau       nom  
-## 10 pyxides     pyxide       nom
+##    word           lemma        type 
+##    <chr>          <chr>        <chr>
+##  1 mourante       mourant      adj  
+##  2 biographes     biographe    nom  
+##  3 poétiquement   poétiquement adv  
+##  4 traduis        traduire     ver  
+##  5 beigne         beigne       nom  
+##  6 demandant      demander     ver  
+##  7 mûriraient     mûrir        ver  
+##  8 étourdissantes étourdissant adj  
+##  9 danseras       danser       ver  
+## 10 souviendrais   souvenir     ver
 ```
 
 ```r
@@ -209,7 +209,10 @@ mot_freq %>%
 La fonction est souvent longue pour afficher le wordcloud donc je n'éxecute
 pas le code précédent mais ça donnera comme résultat qqchose comme ça (les mots
 sont placés aléatoirement mais leur taille dépend de leur fréquence donc ne 
-changera pas)
+changera pas). 
+Ce qu'il y a d'intéressant dans la version HTML, même si elle est parfois un peu
+longue à charger, c'est qu'elle est interactive et permet donc de savoir le nombre
+d'occurrence d'un mot en passant la souris dessus. 
 
 ![](eva.png)
 
