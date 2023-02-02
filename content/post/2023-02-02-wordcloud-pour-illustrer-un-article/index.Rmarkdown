@@ -172,7 +172,10 @@ mot_freq %>%
 La fonction est souvent longue pour afficher le wordcloud donc je n'éxecute
 pas le code précédent mais ça donnera comme résultat qqchose comme ça (les mots
 sont placés aléatoirement mais leur taille dépend de leur fréquence donc ne 
-changera pas)
+changera pas). 
+Ce qu'il y a d'intéressant dans la version HTML, même si elle est parfois un peu
+longue à charger, c'est qu'elle est interactive et permet donc de savoir le nombre
+d'occurrence d'un mot en passant la souris dessus. 
 
 ![](eva.png)
 
