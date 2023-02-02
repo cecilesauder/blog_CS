@@ -189,9 +189,7 @@ en ` .png`
 ## WordCloud ou WordDuck 
 
 Alors oui, je pourrais faire une fonction qui prend en arguments le mois et l'année,
-mais comme de toutes façons la fonction ` wordcloud2() ` avec `figPath`, faut l'acutaliser
-un paquet de fois dans un navigateur pour la faire fonctionner... Ben oui c'est
-un bug connu il semblerait.
+mais comme de toutes façons la fonction ` wordcloud2() ` avec `figPath`, faut l'actualiser un paquet de fois dans un navigateur pour la faire fonctionner... Ben oui c'est un bug connu il semblerait.
 
 La forme ça ressemble à ça d'ailleurs : 
 
