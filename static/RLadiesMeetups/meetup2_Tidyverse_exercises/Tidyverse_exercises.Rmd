@@ -18,7 +18,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE, results = 'hide')
 options(htmltools.dir.version = FALSE)
 #options(crayon.enabled = TRUE)
-library(emo)
+#library(emo)
 
 ```
 
