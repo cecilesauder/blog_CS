@@ -7,5 +7,7 @@ Blog about datascience with R
 
 Personnal website of Cécile Sauder
 
+bug netlify, j'ai plus accès au site, je tente de modif le readme pour qu'il fasse la mise a jour du site... j'y crois pas trop
+
 
 [https://cecilesauder.netlify.app/](https://cecilesauder.netlify.app/)
